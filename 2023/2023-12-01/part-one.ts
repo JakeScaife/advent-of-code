@@ -3,8 +3,7 @@ import { Input } from "../../shared/input";
 const input = await Input.readLines();
 
 function fetchCalibration(line: string): number {
-    const parsed = [...line].map(Number);
-    const digits = parsed.filter(x => !Number.isNaN(x));
+    const digits = [...line].map(Number).filter(x => x);
     return digits[0] * 10 + digits[digits.length - 1];
 }
 
